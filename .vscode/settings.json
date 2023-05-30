@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/47580003-4fbc-488c-b3d9-2742a8f80117/resourceGroups/apipruebawhatsappnoderg/providers/Microsoft.Web/sites/apipruebawhatsappnode",
+    "appService.deploySubpath": "src"
+}
