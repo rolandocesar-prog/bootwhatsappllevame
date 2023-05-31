@@ -7,9 +7,9 @@ const processMessage = require("../shared/processMessage");
 const VerifyToken = (req, res) =>{
     
         try {
-            var accessToken = "DFS6465RTSD32TS1GS3S5D5E";
-            var token = req.query["hub.verify_token"];
-            var challenge = req.query["hub.challenge"];
+            let accessToken = "DFS6465RTSD32TS1GS3S5D5E";
+            let token = req.query["hub.verify_token"];
+            let challenge = req.query["hub.challenge"];
 
             if (challenge != null && token != null && token == accessToken) {
                 res.send(challenge);
@@ -25,16 +25,16 @@ const VerifyToken = (req, res) =>{
 }
 const RecivedMessage = (req, res) => {
     try {
-        var entry = (req.body["entry"])[0];
-        var changes = (entry["changes"])[0];
-        var value = changes["value"];
-        var messageObject = value["messages"];
+        let entry = (req.body["entry"])[0];
+        let changes = (entry["changes"])[0];
+        let value = changes["value"];
+        let messageObject = value["messages"];
 
         if (typeof messageObject != "undefined") {
-            var messages = messageObject[0];
-            var number = messages["from"];
+            let messages = messageObject[0];
+            let number = messages["from"];
 
-            var text = GetTextUser(messages);
+            let text = GetTextUser(messages);
 
             if (text != "") {
                 myConsole.log(text);
@@ -43,39 +43,39 @@ const RecivedMessage = (req, res) => {
             }
             
             // if (text == "text") {
-            //     var data = samples.SampleText("Hola usuario", number);
+            //     let data = samples.SampleText("Hola usuario", number);
             //     whatsappService.SendMessageWhatsapp(data);
             // }
             // else if (text == "image") {
-            //     var data = samples.SampleImage(number);
+            //     let data = samples.SampleImage(number);
             //     whatsappService.SendMessageWhatsapp(data);
             // }
             // else if (text == "video") {
-            //     var data = samples.SampleVideo(number);
+            //     let data = samples.SampleVideo(number);
             //     whatsappService.SendMessageWhatsapp(data);
             // }
             // else if (text == "audio") {
-            //     var data = samples.SampleAudio(number);
+            //     let data = samples.SampleAudio(number);
             //     whatsappService.SendMessageWhatsapp(data);
             // }
             // else if (text == "document") {
-            //     var data = samples.SampleDocument(number);
+            //     let data = samples.SampleDocument(number);
             //     whatsappService.SendMessageWhatsapp(data);
             // }
             // else if (text == "button") {
-            //     var data = samples.SampleButtons(number);
+            //     let data = samples.SampleButtons(number);
             //     whatsappService.SendMessageWhatsapp(data);
             // }
             // else if (text == "list") {
-            //     var data = samples.SampleList(number);
+            //     let data = samples.SampleList(number);
             //     whatsappService.SendMessageWhatsapp(data);
             // }
             // else if (text == "location") {
-            //     var data = samples.SampleLocation(number);
+            //     let data = samples.SampleLocation(number);
             //     whatsappService.SendMessageWhatsapp(data);
             // }
             // else{
-            //     var data = samples.SampleText("No entiendo", number);
+            //     let data = samples.SampleText("No entiendo", number);
             //     whatsappService.SendMessageWhatsapp(data);
             // }
         } 
@@ -88,15 +88,15 @@ const RecivedMessage = (req, res) => {
 }
 
 function GetTextUser(messages) {
-    var text = "";
-    var typeMessage = messages["type"];
+    let text = "";
+    let typeMessage = messages["type"];
 
     if (typeMessage=="text") {
         text = (messages["text"])["body"];
     }
     else if (typeMessage == "interactive" ) {
-        var interactiveObject = messages["interactive"];
-        var typeInteractive = interactiveObject["type"];
+        let interactiveObject = messages["interactive"];
+        let typeInteractive = interactiveObject["type"];
         // myConsole.log(interactiveObject);
 
         if (typeInteractive == "button_reply") {

@@ -19,10 +19,10 @@ function MessageList(number) {
         "interactive": {
             "type": "list",
             "body": {
-                "text": "Tengo estas opcines"
+                "text": "Paqueteria Llevame"
             },
             "footer": {
-                "text": "Selecciona una de las opciones para poder atenderte"
+                "text": "Por favor elige una opcion"
             },
             "action": {
                 "button": "Ver opciones",
@@ -33,12 +33,12 @@ function MessageList(number) {
                             {
                                 "id": "main-comprar",
                                 "title": "Comprar",
-                                "description": "Comprar los mejores productos para tu hogar"
+                                "description": "Enviar un paquete"
                             },
                             {
                                 "id": "main-vender",
                                 "title": "Vender",
-                                "description": "Vender tus productos"
+                                "description": "Registrarse como negocio asociado"
                             }
                         ]
                     },
@@ -48,12 +48,12 @@ function MessageList(number) {
                             {
                                 "id": "main-agencia",
                                 "title": "Agencia",
-                                "description": "Puedes visitar nuestra agencia."
+                                "description": "Puedes visitar nuestras oficinas"
                             },
                             {
                                 "id": "main-contacto",
                                 "title": "Centro de contacto",
-                                "description": "Te atendera uno de nuestros agentes."
+                                "description": "ponte en contacto con nosotros"
                             }
                         ]
                     }
@@ -105,10 +105,10 @@ function MessageLocation(number) {
         "to": number,
         "type": "location",
         "location": {
-            "latitude": "-12.067158831865067",
-            "longitude": "-77.03377940839486",
-            "name": "Estadio Nacional",
-            "address": "C. Jose Diaz s/n, Cercado de Lima 15046"
+            "latitude": "-16.51165",
+            "longitude": "-68.15266",
+            "name": "Oficinas Llevame",
+            "address": "C. Jose Diaz #1145, Edif. Lomas oficina 12"
         }
         
     });
